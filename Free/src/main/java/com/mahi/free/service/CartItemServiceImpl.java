@@ -1,5 +1,7 @@
 package com.mahi.free.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,12 @@ public class CartItemServiceImpl implements CartItemService{
 		cartItemDao.addCartProduct(cartProduct);
 		
 		
+	}
+
+	@Override
+	public List<CartProduct> viewCartProducts(int cartid) {
+		
+		return cartItemDao.viewCartProducts(cartid);
 	}
 
 }

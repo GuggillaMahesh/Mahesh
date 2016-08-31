@@ -28,7 +28,7 @@
 			<li><a href="about.html">ABOUT US</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-	<li><a href="mycart"><span class="glyphicon glyphicon-log-out"></span>View Cart</a>
+	<li><a href="mycart"><span class="glyphicon glyphicon-android-cart"></span>View Cart</a>
 	<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logut</a>
 		</ul>
 	</div>

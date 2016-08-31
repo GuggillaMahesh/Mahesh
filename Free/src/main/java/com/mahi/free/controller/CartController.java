@@ -1,5 +1,8 @@
 package com.mahi.free.controller;
 
+import java.util.List;
+
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -38,6 +41,17 @@ public class CartController {
 		return "redirect:/UserLog";
 		
 	}
-	
+	@RequestMapping("/mycart")
+	public ModelAndView cart(){
+		String activeUsername=SecurityContextHolder.getContext().getAuthentication().getName();
+		User activeUser=userService.getUserByName(activeUsername);
+		Cart cart=activeUser.getCart();
+		int cartid=cart.getCartid();
+		List<CartProduct> list=cartItemService.viewCartProducts(cartid);
+		ObjectMapper mapper=new ObjectMapper();
+		String listJSON=mapper.writeValueAsString(list);
+		double grandTotal=
+		return list;
+	}
 
 }
